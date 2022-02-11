@@ -9,10 +9,16 @@ body {
     background: hsl(214, 47%, 23%);
     height: 100vh;
     width: 100%;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    color: #434343;
+}
+
+div.bodycards {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #434343;
 }
 
 main.cards section.card {
@@ -42,12 +48,12 @@ main.cards section.card h3 {
     font-size: 100%;
     margin: 16px 0;
 }
+
 main.cards section.card span {
     font-weight: 300;
     max-width: 240px;
     font-size: 80%;
     margin-bottom: 16px;
-
 }
 
 main.cards section.card button {
@@ -89,19 +95,22 @@ main.cards section.card.four  {
     box-shadow: 20px 20px 30px -30px #4bb0f3;
 }
 
+
+/* responsive */
 @media screen and (max-width: 780px ) {
     main.cards {
         flex-direction: column;
-        margin-top: 100px;
     }
 
     main.cards section.card {
         margin-left: 0;
         margin-bottom: 26px;
     }
+
     main.cards section.card:first-child {
-        margin-top: 150px;
+        /* margin-top: 150px; */
     }
+    
     main.cards section.card:last-child {
         margin-bottom: 0;
     }
