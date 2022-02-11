@@ -37,6 +37,16 @@ main.cards {
     padding: 32px;
     justify-content: space-between;
     flex-direction: row;
+}
+
+main.cards section.card h3 {
+    margin: 16px 0;
+}
+main.cards section.card span {
+    font-weight: 300;
+    max-width: 240px;
+    font-size: 80%;
+    margin-bottom: 16px;
 
 }
 
@@ -48,7 +58,41 @@ main.cards section.card button {
     font-size: 80%;
     border: 0;
     font-weight: 500;
+    color: #FFF;
 }
+
+/* gradient in buttons */
+main.cards section.card.one button {
+    background: linear-gradient(to right, #2f61ac, #4bb0f3);
+}
+main.cards section.card.two button {
+    background: linear-gradient(to right, #2f61ac, #4bb0f3);
+}
+main.cards section.card.three button {
+    background: linear-gradient(to right, #2f61ac, #4bb0f3);
+}
+main.cards section.card.four button {
+    background: linear-gradient(to right, #2f61ac, #4bb0f3);
+}
+
+/* box shadow in cards */
+main.cards section.card.one  {
+    box-shadow: 20px 20px 30px -30px #4bb0f3;
+}
+main.cards section.card.two  {
+    box-shadow: 20px 20px 30px -30px #4bb0f3;
+}
+main.cards section.card.three  {
+    box-shadow: 20px 20px 30px -30px #4bb0f3;
+}
+main.cards section.card.four  {
+    box-shadow: 20px 20px 30px -30px #4bb0f3;
+}
+
+
+
+
+
 
 main.cards section.card img {
 
