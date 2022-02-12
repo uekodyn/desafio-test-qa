@@ -67,6 +67,12 @@ main.cards section.card button {
     color: #FFF;
 }
 
+main.cards section.card a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+
 /* gradient in buttons */
 main.cards section.card.one button {
     background: linear-gradient(to right, #2f61ac, #4bb0f3);
@@ -110,7 +116,7 @@ main.cards section.card.four  {
     main.cards section.card:first-child {
         /* margin-top: 150px; */
     }
-    
+
     main.cards section.card:last-child {
         margin-bottom: 0;
     }
