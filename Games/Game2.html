@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="../styles/styleheader.css">
     <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/stylesgames.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
@@ -33,9 +34,9 @@
                 } else {
                     result = "O número " + num + " não é primo";
                 }
-            document.getElementById("mensagem").innerHTML = result;
+            document.getElementById("result").innerHTML = result;
             } else {
-                document.getElementById("mensagem").innerHTML = "Número maior do que permitido";
+                document.getElementById("result").innerHTML = "Número não permitido";
             }
         }   
       </script>
@@ -51,8 +52,8 @@
     </header>
     <div class="bodycards">
         <main class="cards">
-
-            <section  class="card one">
+            <section  class="card game">
+                <div class="form">
                     <p>
                     <label for="name">Digite um número de 1 a 1000:</label>
                     </p>
@@ -63,7 +64,9 @@
                     <a href="../index.html">
                         <button  type="button">Voltar</button>
                     </a>
-                    <span id="mensagem" style='display:inline'></span>
+                    <span id="result" style='display:inline'></span>
+                    </section>
+                </div>
             </section>
         </main>
     </div>

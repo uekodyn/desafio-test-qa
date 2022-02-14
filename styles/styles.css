@@ -75,15 +75,19 @@ main.cards section.card a {
 
 /* gradient in buttons */
 main.cards section.card.one button {
+    margin-top: 50px;
     background: linear-gradient(to right, #2f61ac, #4bb0f3);
 }
 main.cards section.card.two button {
+    margin-top: 50px;
     background: linear-gradient(to right, #2f61ac, #4bb0f3);
 }
 main.cards section.card.three button {
+    margin-top: 35px;
     background: linear-gradient(to right, #2f61ac, #4bb0f3);
 }
 main.cards section.card.four button {
+    margin-top: 20px;
     background: linear-gradient(to right, #2f61ac, #4bb0f3);
 }
 
@@ -113,11 +117,9 @@ main.cards section.card.four  {
         margin-bottom: 26px;
     }
 
-    main.cards section.card:first-child {
-        /* margin-top: 150px; */
-    }
-
     main.cards section.card:last-child {
         margin-bottom: 0;
     }
 }
+
+

@@ -8,9 +8,27 @@
 
     <link rel="stylesheet" href="../styles/styleheader.css">
     <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/stylesgames.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+    <script type="text/javascript">
+        function calculate() {
+            var num = parseInt(document.getElementById("num").value);
+            var result = document.getElementById('result');
+             
+            if (num >= 1 & num <= 1000) {
+               if ( num % 2 == 0)
+                result.innerHTML = "O número " + num + " é Par";
+               else
+                result.innerHTML = "O número " + num + " é Ímpar";
+            }
+            else {
+                document.getElementById("result").innerHTML = "Número não permitido";
+            };
+        };
+    </script>
 
 </head>
 <body>
@@ -23,14 +41,14 @@
     </header>
     <div class="bodycards">
         <main class="cards">
-            <section  class="card one">
+            <section  class="card game">
                 <div class="form">
                     <label >Digite um número de 1 a 1000:</label>
                     <input id="num" type="number" min="1" max="1000" maxlength="4"
                      onkeypress='return event.charCode >= 48 && event.charCode <= 57'
                      oninput="this.value=this.value.slice(0,this.maxLength)"
                      onKeyPress='if(this.value.length==4) return false'><br><br>
-                    <button onclick="calculate()">Resposta</button>
+                    <button onclick="calculate()">Resultado</button>
                     <a href="../index.html">
                         <button   type="button">Voltar</button>
                     </a>
@@ -39,24 +57,5 @@
             </section>
         </main>
     </div>
-
-    <script type="text/javascript">
-        function calculate() {
-            var num = parseInt(document.getElementById("num").value);
-            var result = document.getElementById('result');
-             
-            if (num >= 1 & num <= 1000) {
-               if (num%2 == 0)
-                result.innerHTML = "O número " + num + " é Par";
-               else
-                result.innerHTML = "O número " + num + " é Ímpar";
-            }
-            else {
-                num = 1000;
-            };
-            
-        };
-
-    </script>
 </body>
 </html>

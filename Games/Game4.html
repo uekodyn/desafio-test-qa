@@ -8,13 +8,22 @@
 
     <link rel="stylesheet" href="../styles/styleheader.css">
     <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/stylesgames.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
     <script type="text/javascript">
 
+        // resetar 
+        function myFunction() {
+            document.getElementById("result").innerHTML = '';
+            resultString = [];
+            numarray();
+        }
+
         function numarray() {
             var num = parseInt(document.getElementById('numero').value);
+            var result = document.getElementById('result');
             var array = [];
             var sequencia = "";
             
@@ -24,20 +33,22 @@
                 for (let i = 1; i <= num; i++ ){
                     array.push(i);
                     if(i % 4 === 0){ 
-                        sequencia += i + "-pin, ";
+                        sequencia += i + "-pin ";
                     } else {
-                        sequencia += i + ", ";
-                    }               
+                        sequencia += i + " ";
+                    }       
                 } 
-                document.getElementById("result").innerHTML = sequencia;
+                var resultString = sequencia.split(" ", 1000);
+                for (var i = 0; i < resultString.length; i++) {
+                    let item = document.createElement('li');
+                    item.appendChild(document.createTextNode(resultString[i]));
+                    result.appendChild(item);
+                }
             } else {
-                document.getElementById("result").innerHTML = "Número maior do que permitido";
+                document.getElementById("result").innerHTML = "Número não permitido";
             }
         }
-
     </script>
-
-
 </head>
 <body>
     <header class="header">
@@ -49,17 +60,19 @@
     </header>
     <div class="bodycards">
         <main class="cards">
-            <section  class="card one">
-                <label>Digite um número de 1 a 1000:</label>
-                <input id="numero" type="number" min="1" max="1000" maxlength="4"
-                onkeypress='return event.charCode >= 48 && event.charCode <= 57'
-                oninput="this.value=this.value.slice(0,this.maxLength)">
-                <br>
-                <button onclick="numarray()">Exibir</button>
-                <a href="../index.html">
-                    <button  type="button">Voltar</button>
-                </a>
-                <div id='result'></div><br>
+            <section  class="card game">
+                <div class="form">
+                    <label>Digite um número de 1 a 1000:</label>
+                    <input id="numero" type="number" min="1" max="1000" maxlength="4"
+                    onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+                    oninput="this.value=this.value.slice(0,this.maxLength)">
+                    <br>
+                    <button onclick="myFunction()">Resultado</button>
+                    <a href="../index.html">
+                        <button  type="button">Voltar</button>
+                    </a>
+                    <span id='result'></span>
+                </div>
         </section>
         </main>
     </div>
