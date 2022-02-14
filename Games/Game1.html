@@ -24,14 +24,17 @@
     <div class="bodycards">
         <main class="cards">
             <section  class="card one">
-                <form action="#">
+                <div class="form">
                     <label >Digite um número de 1 a 1000:</label>
-                    <input id="num" type="number" min="1" max="1000">  <br><br>
+                    <input id="num" type="number" min="1" max="1000" maxlength="4"
+                     onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+                     oninput="this.value=this.value.slice(0,this.maxLength)"
+                     onKeyPress='if(this.value.length==4) return false'><br><br>
                     <button onclick="calculate()">Resposta</button>
                     <a href="../index.html">
                         <button   type="button">Voltar</button>
                     </a>
-                </form>
+                </div>
                 <span id="result" style='display:inline'></span>
             </section>
         </main>
@@ -47,9 +50,13 @@
                 result.innerHTML = "O número " + num + " é Par";
                else
                 result.innerHTML = "O número " + num + " é Ímpar";
+            }
+            else {
+                num = 1000;
             };
-            return
+            
         };
+
     </script>
 </body>
 </html>

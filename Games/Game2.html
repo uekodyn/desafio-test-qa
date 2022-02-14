@@ -11,6 +11,35 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <script type="text/javascript">
+
+        function primo(num) {
+        // verifica se o numero digitado é "1", que não é primo
+            if(num != 1) {
+                for (var i = 2; i < num; i++)
+                    if (num % i == 0) return false;
+                return num !== 1;
+            }
+        }
+    
+        function verificaPrimo() {
+            var num = document.getElementById("name").value;
+            var result = "";
+          // verifica se é número
+            if(!isNaN(num) & num <= 1000 & num >= 0){
+          // verifica se é primo
+                if (primo(num)) {
+                    result = "O número " + num + " é primo"; 
+                } else {
+                    result = "O número " + num + " não é primo";
+                }
+            document.getElementById("mensagem").innerHTML = result;
+            } else {
+                document.getElementById("mensagem").innerHTML = "Número maior do que permitido";
+            }
+        }   
+      </script>
+
 </head>
 <body>
     <header class="header">
@@ -24,15 +53,17 @@
         <main class="cards">
 
             <section  class="card one">
-                <form >
-                    <label for="fname">Digite um número de 1 a 1000:</label>
-                    <input type="text" id="fname" name="fname"><br><br>
-                    <button type="submit">Resultado</button>
+                    <p>
+                    <label for="name">Digite um número de 1 a 1000:</label>
+                    </p>
+                    <input type="number" min="1" max="1000" maxlength="4" id="name" name="name"
+                    onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+                    oninput="this.value=this.value.slice(0,this.maxLength)"><br><br>
+                    <button type="button" class="botão" id="verificavalor" onclick="verificaPrimo()"  >Resultado</button>
                     <a href="../index.html">
                         <button  type="button">Voltar</button>
                     </a>
-                    
-                </form>
+                    <span id="mensagem" style='display:inline'></span>
             </section>
         </main>
     </div>

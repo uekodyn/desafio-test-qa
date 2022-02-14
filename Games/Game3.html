@@ -12,6 +12,41 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <script type="text/javascript">
+
+        function verificaNumero(num) {
+                // verifica se o numero digitado é "1", que não é primo
+                    if(num <= 1000 & num >= 0) {
+                        return num
+                    }
+                }
+
+        function fibonacci() {
+            var numero = parseInt(document.getElementById('numero').value);
+            // adicionar a sequencia em array
+            var fib = function(n) {
+                var a = 0, b = 1, f = 0, i = 2;
+                var array = [];
+                while(f < n){
+                    array.push(f);
+                    f = a + b; 
+                    a = b;
+                    b = f;
+                    i++;
+                    }
+                return array;
+            }
+            var fibArray = fib(1000)
+            // alert(fibArray)
+          
+            //verifica se número existe no array
+            if ( fibArray.includes(numero) ){
+                result.innerHTML="O número " + numero + " existe na sequência de Fibonacci";
+            } else {
+                result.innerHTML="O número " + numero + " não existe na sequência de Fibonacci";
+            };     
+        }
+    </script>
 </head>
 <body>
     <header class="header">
@@ -24,19 +59,16 @@
     <div class="bodycards">
         <main class="cards">
             <section  class="card one">
-                <!-- <form method="post">
-                    <label >Digite um número de 1 a 1000:</label>
-                    <input id="num" type="number">  <br/>
-                    <button onclick="calculate()">Resposta</button><br />
-
+                    <label>Digite um número de 1 a 1000:</label>
+                    <input id="numero" type="number" min="1" max="1000" maxlength="4"
+                    onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+                    oninput="this.value=this.value.slice(0,this.maxLength)">
+                    <br>
+                    <button onclick="fibonacci()">Exibir</button>
                     <a href="../index.html">
-                        <button   type="button">Voltar</button>
+                        <button  type="button">Voltar</button>
                     </a>
-
-                    <p>
-                        <div id='result' style='display:inline'></div>
-                    </p>
-                </form> -->
+                    <div id='result'></div>
             </section>
         </main>
     </div>
