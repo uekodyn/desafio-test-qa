@@ -11,6 +11,33 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <script type="text/javascript">
+
+        function numarray() {
+            var num = parseInt(document.getElementById('numero').value);
+            var array = [];
+            var sequencia = "";
+            
+            // limita numero para 1 a 1000
+            if (num >= 1 & num <= 1000){
+            // cria array e adiciona pin
+                for (let i = 1; i <= num; i++ ){
+                    array.push(i);
+                    if(i % 4 === 0){ 
+                        sequencia += i + "-pin, ";
+                    } else {
+                        sequencia += i + ", ";
+                    }               
+                } 
+                document.getElementById("result").innerHTML = sequencia;
+            } else {
+                document.getElementById("result").innerHTML = "Número maior do que permitido";
+            }
+        }
+
+    </script>
+
+
 </head>
 <body>
     <header class="header">
@@ -22,18 +49,18 @@
     </header>
     <div class="bodycards">
         <main class="cards">
-
             <section  class="card one">
-                <form >
-                    <label for="fname">Digite um número de 1 a 1000:</label>
-                    <input type="number" id="fname" name="fname"><br><br>
-                    <button type="submit">Resultado</button>
-                    <a href="../index.html">
-                        <button  type="button">Voltar</button>
-                    </a>
-                    
-                </form>
-            </section>
+                <label>Digite um número de 1 a 1000:</label>
+                <input id="numero" type="number" min="1" max="1000" maxlength="4"
+                onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+                oninput="this.value=this.value.slice(0,this.maxLength)">
+                <br>
+                <button onclick="numarray()">Exibir</button>
+                <a href="../index.html">
+                    <button  type="button">Voltar</button>
+                </a>
+                <div id='result'></div><br>
+        </section>
         </main>
     </div>
 </body>
