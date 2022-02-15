@@ -15,12 +15,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
     <script type="text/javascript">
 
-        function verificaNumero(num) {
-                    if(num >= 0 & num <= 1000) {
-                        return num
-                    }
-                }
-
         function fibonacci() {
             var num = parseInt(document.getElementById('numero').value);
             // adicionar a sequencia em array
@@ -64,7 +58,9 @@
         <main class="cards">
             <section  class="card game">
                 <div class="form">
+                    <p>
                     <label>Digite um número de 1 a 1000:</label>
+                    </p>
                     <input id="numero" type="number" min="1" max="1000" maxlength="4"
                     onkeypress='return event.charCode >= 48 && event.charCode <= 57'
                     oninput="this.value=this.value.slice(0,this.maxLength)">
