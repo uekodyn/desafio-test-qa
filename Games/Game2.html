@@ -58,7 +58,7 @@
                     <label for="name">Digite um número de 1 a 1000:</label>
                     </p>
                     <input type="number" min="1" max="1000" maxlength="4" id="name" name="name"
-                    onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+                    onkeypress="return event.charCode >= 48 && event.charCode <= 57"
                     oninput="this.value=this.value.slice(0,this.maxLength)"><br><br>
                     <button type="button" class="botão" id="verificavalor" onclick="verificaPrimo()"  >Resultado</button>
                     <a href="../index.html">
